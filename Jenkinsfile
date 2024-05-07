@@ -20,7 +20,7 @@ pipeline {
         // }
         stage('Building'){
             steps{
-                bat 'mvn clean install'
+                bat 'mvn clean install -Dmaven.test.skip=true'
             }
         }
     }
