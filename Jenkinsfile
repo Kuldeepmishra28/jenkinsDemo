@@ -8,19 +8,19 @@ pipeline {
             }
         }
         
-        stage('setup'){
-            steps{
-                bat 'mvn clean'
-            }
-        }
-        stage('test'){
-            steps{
-                bat 'mvn test'
-            }
-        }
+        // stage('setup'){
+        //     steps{
+        //         bat 'mvn clean'
+        //     }
+        // }
+        // stage('test'){
+        //     steps{
+        //         bat 'mvn test'
+        //     }
+        // }
         stage('Building'){
             steps{
-                bat 'mvn clean install -Dmaven.test.skip=true'
+                bat 'mvn clean install'
             }
         }
     }
