@@ -19,7 +19,12 @@ pipeline {
         //     }
         // }
         stage('Building'){
+        triggers{
+            pollSCM('* * * * *')        
+        }
+        
             steps{
+                
                 bat 'mvn clean install -Dmaven.test.skip=true'
             }
         }
